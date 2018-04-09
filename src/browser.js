@@ -24,6 +24,7 @@ const plugin =
         if (!engine) {
           engine = new Styletron({
             hydrate: document.getElementsByClassName('_styletron_hydrate_'),
+            prefix: 's_'
           });
         }
         ctx.element = (
@@ -32,7 +33,7 @@ const plugin =
       }
 
       return next();
-    },
+    }
   });
 
 export default ((plugin: any): FusionPlugin<*, *>);

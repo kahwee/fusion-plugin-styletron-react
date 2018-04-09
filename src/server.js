@@ -19,7 +19,7 @@ const plugin =
   createPlugin({
     middleware: () => (ctx, next) => {
       if (ctx.element) {
-        const engine = new Styletron();
+        const engine = new Styletron({prefix: 's_'});
 
         ctx.element = (
           <StyletronProvider value={engine}>{ctx.element}</StyletronProvider>
@@ -32,7 +32,7 @@ const plugin =
       } else {
         return next();
       }
-    },
+    }
   });
 
 export default ((plugin: any): FusionPlugin<*, *>);
